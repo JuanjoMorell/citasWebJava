@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:8080")
@@ -48,6 +47,6 @@ public class UsuarioController {
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteUsuario(@PathVariable Long id) {
         uService.deleteUsuario(id);
-        return ResponseEntity.ok("Usuario eleminado correctamente.");
+        return ResponseEntity.ok("Usuario eliminado correctamente.");
     }
 }
