@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@Table(name = "Medico")
 public class Medico extends Usuario {
 
     @Column(name = "Numero_Colegiado")
@@ -16,6 +17,7 @@ public class Medico extends Usuario {
                 inverseJoinColumns = @JoinColumn(name = "PacientesId"))
     private List<Paciente> pacientes;
 
+    public Medico() {}
 
     public Medico(String _nombre, String _apellidos, String _username, String _clave,
                   String _numeroColegiado) {

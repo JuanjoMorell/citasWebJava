@@ -3,6 +3,7 @@ package com.example.citasWebJava.model;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "Diagnostico")
 public class Diagnostico {
 
     @Id
@@ -15,6 +16,8 @@ public class Diagnostico {
 
     @Column(name = "Enfermedad")
     private String enfermedad;
+
+    public Diagnostico() {}
 
     public Diagnostico(String _valoracionEspecialista, String _enfermedad)
     {

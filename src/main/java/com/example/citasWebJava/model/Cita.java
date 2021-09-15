@@ -4,6 +4,7 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
+@Table(name = "Cita")
 public class Cita {
 
     @Id
@@ -21,16 +22,18 @@ public class Cita {
     private int attribute11;
 
     @OneToOne
-    @Column(name = "Paciente")
+    @JoinColumn(name = "Paciente")
     private Paciente paciente;
 
     @OneToOne
-    @Column(name = "Medico")
+    @JoinColumn(name = "Medico")
     private Medico medico;
 
     @OneToOne
-    @Column(name = "Diagnostico")
+    @JoinColumn(name = "Diagnostico")
     private Diagnostico diagnostico;
+
+    public Cita() {}
 
     public Cita(Date _fechaHora, String _motivoCita, int _attribute11,
                 Paciente _paciente, Medico _medico)

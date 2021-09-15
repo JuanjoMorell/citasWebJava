@@ -1,13 +1,11 @@
 package com.example.citasWebJava.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.ManyToMany;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@Table(name = "Paciente")
 public class Paciente extends Usuario {
 
     @Column(name = "NSS")
@@ -25,6 +23,7 @@ public class Paciente extends Usuario {
     @ManyToMany(mappedBy = "pacientes", fetch = FetchType.EAGER)
     private List<Medico> medicos;
 
+    public Paciente() {}
 
     public Paciente(String _nombre, String _apellidos, String _username, String _clave,
                     String _nss, String _numeroTarjeta, String _telefono, String _direccion) {

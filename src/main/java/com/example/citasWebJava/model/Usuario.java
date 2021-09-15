@@ -6,7 +6,6 @@ import javax.persistence.*;
 @Inheritance(strategy = InheritanceType.JOINED)
 @Table(name = "Usuario")
 public class Usuario {
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
@@ -23,6 +22,9 @@ public class Usuario {
 
     @Column(name = "Clave")
     private String clave;
+
+    //Constructor default
+    public Usuario() {}
 
     public Usuario(String _nombre, String _apellidos, String _username, String _clave)
     {

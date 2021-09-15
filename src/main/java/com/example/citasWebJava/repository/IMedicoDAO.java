@@ -12,12 +12,12 @@ import java.util.List;
 public interface IMedicoDAO extends JpaRepository<Medico,Long> {
 
     @Query(value = "SELECT * FROM Paciente p\r\n"
-            + "WHERE p.id IN (SELECT paciente FROM MedicoPaciente \r\n"
-            + "     WHERE medico = ?1)",
+            + "WHERE p.id IN (SELECT PacientesID FROM MedicoPaciente \r\n"
+            + "     WHERE MedicosID = ?1)",
             nativeQuery = true)
 
     public List<Paciente> findPacientes(Long id);
 
-    public List<Medico> findMedicoByUser(String username);
+    public List<Medico> findMedicoByUsername(String username);
 
 }
